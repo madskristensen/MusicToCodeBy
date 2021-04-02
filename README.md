@@ -8,6 +8,8 @@ or get the [CI build](https://www.vsixgallery.com/extension/MusicToCodeBy.bcef88
 -----------------------------------------
 Plays your favorite music to code by to get you in the zone!!
 
+![Screenshot](art/screenshot.png)
+
 Get your royalty free music here: https://www.bensound.com/royalty-free-music
 
 ## License
