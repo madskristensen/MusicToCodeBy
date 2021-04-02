@@ -3,7 +3,8 @@
     <Metadata>
         <Identity Id="MusicToCodeBy.bcef8857-0a66-4bb6-b34f-5c2ac692b10a" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
         <DisplayName>Music To Code By</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Description xml:space="preserve">Plays your favorite music to code by to get you in the zone!!Plays your </D
+        <MoreInfo>https://github.com/madskristensen/MusicToCodeBy</MoreInfo>escription>
         <License>Resources\LICENSE</License>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
