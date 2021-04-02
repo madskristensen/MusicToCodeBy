@@ -1,15 +1,15 @@
-﻿# Sticky Christmas
+﻿# Music To Code By
 
-[![Build status](https://ci.appveyor.com/api/projects/status/2761x092jl4c53h1?svg=true)](https://ci.appveyor.com/project/madskristensen/stickychristmas)
+[![Build status](https://ci.appveyor.com/api/projects/status/8dp6elaqrvw8iwc9?svg=true)](https://ci.appveyor.com/project/madskristensen/musictocodeby)
 
 A simulation of what happens when you spill cookies and eggnog into your keyboard while coding
 
-Download this extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.StickyChristmas)
-or get the [CI build](https://www.vsixgallery.com/extension/846a4ff2-2fc1-4bca-861a-ecc3c0f02eba).
+Download this extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MusicToCodeBy)
+or get the [CI build](https://www.vsixgallery.com/extension/MusicToCodeBy.bcef8857-0a66-4bb6-b34f-5c2ac692b10a).
 
 -----------------------------------------
 
-❄ coming soon...
+Music: https://www.bensound.com/royalty-free-music
 
 ## License
 [Apache 2.0](LICENSE)
