@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using Community.VisualStudio.Toolkit;
+using Microsoft.VisualStudio.Threading;
 using WMPLib;
 
 namespace MusicToCodeBy
@@ -16,7 +18,7 @@ namespace MusicToCodeBy
 
         public bool IsPlaying => _player.playState == WMPPlayState.wmppsPlaying;
 
-        public void Start()
+        public void Play()
         {
             if (_player.playState != WMPPlayState.wmppsPaused)
             {
@@ -30,6 +32,11 @@ namespace MusicToCodeBy
         public void Pause()
         {
             _player.controls.pause();
+        }
+
+        public void Stop()
+        {
+            _player.controls.stop();
         }
 
         public void VolumeUp()
@@ -74,6 +81,7 @@ namespace MusicToCodeBy
         private void OnOptionsSaved(object sender, General e)
         {
             _player.settings.volume = e.Volume;
+            VS.Notifications.SetStatusbarTextAsync($"Music volume set to {e.Volume}").Forget();
         }
     }
 }

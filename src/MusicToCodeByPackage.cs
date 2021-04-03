@@ -13,15 +13,16 @@ namespace MusicToCodeBy
     [ProvideProfile(typeof(OptionsProvider.GeneralOptions), Vsix.Name, "General", 0, 0, true)]
     public sealed class MusicToCodeByPackage : AsyncPackage
     {
-        public static MusicPlayer player = new();
+        internal static MusicPlayer Player { get; } = new();
 
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
+            await PlayPause.InitializeAsync(this);
             await VolumeUp.InitializeAsync(this);
-            await ToggleMusic.InitializeAsync(this);
             await VolumeDown.InitializeAsync(this);
+            await PickFolder.InitializeAsync(this);
         }
     }
 }

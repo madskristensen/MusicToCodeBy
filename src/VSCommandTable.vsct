@@ -7,17 +7,20 @@
 
   <Commands package="guidPackage">
     <Groups>
-      <Group guid="guidMusicToCodeByPackageCmdSet" id="ToolbarGroup" priority="0x0600">
+      <Group guid="CommandSet" id="ToolbarGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_STANDARD"/>
       </Group>
-      <Group guid="guidMusicToCodeByPackageCmdSet" id="MusicMenuGroup" priority="0x0600">
-        <Parent guid="guidMusicToCodeByPackageCmdSet" id="MusicMenu"/>
+      <Group guid="CommandSet" id="MusicMenuGroup" priority="0x0100">
+        <Parent guid="CommandSet" id="MusicMenu"/>
+      </Group>
+      <Group guid="CommandSet" id="FolderPickerGroup" priority="0x0200">
+        <Parent guid="CommandSet" id="MusicMenu"/>
       </Group>
     </Groups>
 
     <Menus>
-      <Menu guid="guidMusicToCodeByPackageCmdSet" id="MusicMenu" priority="100" type="MenuController">
-        <Parent guid="guidMusicToCodeByPackageCmdSet" id="ToolbarGroup"/>
+      <Menu guid="CommandSet" id="MusicMenu" priority="100" type="MenuController">
+        <Parent guid="CommandSet" id="ToolbarGroup"/>
         <CommandFlag>NotInTBList</CommandFlag>
         <Strings>
           <ButtonText>Music menu</ButtonText>
@@ -28,8 +31,8 @@
     <!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
     <Buttons>
-      <Button guid="guidMusicToCodeByPackageCmdSet" id="PlayPause" priority="0x0100" type="Button">
-        <Parent guid="guidMusicToCodeByPackageCmdSet" id="MusicMenuGroup" />
+      <Button guid="CommandSet" id="PlayPause" priority="0x0100" type="Button">
+        <Parent guid="CommandSet" id="MusicMenuGroup" />
         <Icon guid="ImageCatalogGuid" id="Sound" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <CommandFlag>FixMenuController</CommandFlag>
@@ -40,8 +43,8 @@
         </Strings>
       </Button>
 
-      <Button guid="guidMusicToCodeByPackageCmdSet" id="VolumeUp" priority="0x0100" type="Button">
-        <Parent guid="guidMusicToCodeByPackageCmdSet" id="MusicMenuGroup" />
+      <Button guid="CommandSet" id="VolumeUp" priority="0x0100" type="Button">
+        <Parent guid="CommandSet" id="MusicMenuGroup" />
         <Icon guid="ImageCatalogGuid" id="MoveUp" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -50,8 +53,8 @@
         </Strings>
       </Button>
 
-      <Button guid="guidMusicToCodeByPackageCmdSet" id="VolumeDown" priority="0x0100" type="Button">
-        <Parent guid="guidMusicToCodeByPackageCmdSet" id="MusicMenuGroup" />
+      <Button guid="CommandSet" id="VolumeDown" priority="0x0100" type="Button">
+        <Parent guid="CommandSet" id="MusicMenuGroup" />
         <Icon guid="ImageCatalogGuid" id="MoveDown" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
@@ -59,22 +62,34 @@
           <LocCanonicalName>.MusicToCodeBy.VolumeDown</LocCanonicalName>
         </Strings>
       </Button>
+
+      <Button guid="CommandSet" id="PickFolder" priority="0x0100" type="Button">
+        <Parent guid="CommandSet" id="FolderPickerGroup" />
+        <Icon guid="ImageCatalogGuid" id="FolderOpened" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Select Music Folder...</ButtonText>
+          <LocCanonicalName>.MusicToCodeBy.SelectFolder</LocCanonicalName>
+        </Strings>
+      </Button>
     </Buttons>
   </Commands>
 
   <KeyBindings>
-    <KeyBinding guid="guidMusicToCodeByPackageCmdSet" id="PlayPause" editor="guidVSStd97" key1="M" mod1="Control Shift" />
+    <KeyBinding guid="CommandSet" id="PlayPause" editor="guidVSStd97" key1="M" mod1="Control Shift" />
   </KeyBindings>
 
   <Symbols>
     <GuidSymbol name="guidPackage" value="{43ce9aba-807e-49a7-8de3-f2ba6d484d37}" />
 
-    <GuidSymbol name="guidMusicToCodeByPackageCmdSet" value="{c61f2690-2d5a-4750-b83e-c6ff52b900e3}">
+    <GuidSymbol name="CommandSet" value="{c61f2690-2d5a-4750-b83e-c6ff52b900e3}">
       <IDSymbol name="ToolbarGroup" value="0x0001" />
       <IDSymbol name="MusicMenuGroup" value="0x0002" />
+      <IDSymbol name="FolderPickerGroup" value="0x0003" />
       <IDSymbol name="PlayPause" value="0x0100" />
       <IDSymbol name="VolumeUp" value="0x0101" />
       <IDSymbol name="VolumeDown" value="0x0102" />
+      <IDSymbol name="PickFolder" value="0x0103" />
       <IDSymbol name="MusicMenu" value="0x1001" />
     </GuidSymbol>
   </Symbols>

@@ -5,12 +5,12 @@ namespace MusicToCodeBy
 {
     internal sealed class VolumeUp : BaseCommand<VolumeUp>
     {
-        public VolumeUp() : base(PackageGuids.guidMusicToCodeByPackageCmdSet, PackageIds.VolumeUp)
+        public VolumeUp() : base(PackageGuids.CommandSet, PackageIds.VolumeUp)
         { }
 
         protected override void Execute(object sender, EventArgs e)
         {
-            MusicToCodeByPackage.player.VolumeUp();
+            MusicToCodeByPackage.Player.VolumeUp();
         }
     }
 }
