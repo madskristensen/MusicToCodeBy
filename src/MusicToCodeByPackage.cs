@@ -7,22 +7,23 @@ using Task = System.Threading.Tasks.Task;
 namespace MusicToCodeBy
 {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
+    [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [Guid("43ce9aba-807e-49a7-8de3-f2ba6d484d37")]
+    [Guid(PackageGuids.guidPackageString)]
     [ProvideOptionPage(typeof(OptionsProvider.GeneralOptions), Vsix.Name, "General", 0, 0, true)]
     [ProvideProfile(typeof(OptionsProvider.GeneralOptions), Vsix.Name, "General", 0, 0, true)]
     public sealed class MusicToCodeByPackage : AsyncPackage
     {
-        internal static MusicPlayer Player { get; } = new();
-
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
-            await PlayPause.InitializeAsync(this);
-            await VolumeUp.InitializeAsync(this);
-            await VolumeDown.InitializeAsync(this);
-            await PickFolder.InitializeAsync(this);
+            MusicPlayer player = new();
+
+            await PlayPause.InitializeAsync(this, player);
+            await VolumeUp.InitializeAsync(this, player);
+            await VolumeDown.InitializeAsync(this, player);
+            await PickFolder.InitializeAsync(this, player);
         }
     }
 }

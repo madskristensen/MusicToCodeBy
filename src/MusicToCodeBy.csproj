@@ -3,6 +3,7 @@
   <PropertyGroup>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <LangVersion>9.0</LangVersion>
+    <ResolveComReferenceSilent>True</ResolveComReferenceSilent>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -75,7 +76,6 @@
       <LastGenOutput>source.extension.cs</LastGenOutput>
     </None>
     <Content Include="Resources\Icon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
@@ -93,7 +93,9 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Community.VisualStudio.Toolkit" Version="16.0.31" ExcludeAssets="runtime" />
+    <PackageReference Include="Community.VisualStudio.Toolkit" Version="15.0.41" ExcludeAssets="runtime">
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.10.11" />
   </ItemGroup>
   <ItemGroup>

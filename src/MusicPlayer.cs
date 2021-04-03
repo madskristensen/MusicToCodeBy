@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Community.VisualStudio.Toolkit;
-using Microsoft.VisualStudio.Threading;
+using Microsoft.VisualStudio.Shell;
 using WMPLib;
 
 namespace MusicToCodeBy
@@ -81,7 +81,7 @@ namespace MusicToCodeBy
         private void OnOptionsSaved(object sender, General e)
         {
             _player.settings.volume = e.Volume;
-            VS.Notifications.SetStatusbarTextAsync($"Music volume set to {e.Volume}").Forget();
+            VS.Notifications.SetStatusbarTextAsync($"Music volume set to {e.Volume}").FireAndForget();
         }
     }
 }

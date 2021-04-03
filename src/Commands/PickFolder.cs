@@ -8,15 +8,23 @@ namespace MusicToCodeBy
 {
     internal sealed class PickFolder : BaseCommand<PickFolder>
     {
-        public PickFolder() : base(PackageGuids.CommandSet, PackageIds.PickFolder)
-        { }
+        private static MusicPlayer _player;
+
+        public PickFolder()
+            : base(PackageGuids.CommandSet, PackageIds.PickFolder) { }
+
+        public static Task InitializeAsync(AsyncPackage package, MusicPlayer player)
+        {
+            _player = player;
+            return InitializeAsync(package);
+        }
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            if (await TryPickFolderAsync() && MusicToCodeByPackage.Player.IsPlaying)
+            if (await TryPickFolderAsync() && _player.IsPlaying)
             {
-                MusicToCodeByPackage.Player.Stop();
-                MusicToCodeByPackage.Player.Play();
+                _player.Stop();
+                _player.Play();
             }
         }
 

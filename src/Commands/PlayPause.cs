@@ -6,14 +6,20 @@ namespace MusicToCodeBy
 {
     internal sealed class PlayPause : BaseCommand<PlayPause>
     {
+        private static MusicPlayer _player;
 
         public PlayPause()
-            : base(PackageGuids.CommandSet, PackageIds.PlayPause)
-        { }
+            : base(PackageGuids.CommandSet, PackageIds.PlayPause) { }
+
+        public static Task InitializeAsync(AsyncPackage package, MusicPlayer player)
+        {
+            _player = player;
+            return InitializeAsync(package);
+        }
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            MusicPlayer player = MusicToCodeByPackage.Player;
+            MusicPlayer player = _player;
 
             if (player.IsPlaying)
             {
