@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Commands\NextTrack.cs" />
     <Compile Include="Commands\PickFolder.cs" />
+    <Compile Include="Commands\PreviousTrack.cs" />
     <Compile Include="Commands\VolumeDown.cs" />
     <Compile Include="Commands\VolumeUp.cs" />
     <Compile Include="MusicPlayer.cs" />
