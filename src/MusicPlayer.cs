@@ -77,6 +77,11 @@ namespace MusicToCodeBy
 
             return playlist;
         }
+        
+        public void NextTrack()
+        {
+            _player.controls.next();
+        }
 
         private void OnOptionsSaved(object sender, General e)
         {
