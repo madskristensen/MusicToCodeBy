@@ -62,6 +62,16 @@
           <LocCanonicalName>.MusicToCodeBy.VolumeDown</LocCanonicalName>
         </Strings>
       </Button>
+      
+      <Button guid="CommandSet" id="NextTrack" priority="0x0100" type="Button">
+        <Parent guid="CommandSet" id="MusicMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="GoToNextInList" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Next Track</ButtonText>
+          <LocCanonicalName>.MusicToCodeBy.NextTrack</LocCanonicalName>
+        </Strings>
+      </Button>
 
       <Button guid="CommandSet" id="PickFolder" priority="0x0100" type="Button">
         <Parent guid="CommandSet" id="FolderPickerGroup" />
@@ -91,6 +101,7 @@
       <IDSymbol name="VolumeDown" value="0x0102" />
       <IDSymbol name="PickFolder" value="0x0103" />
       <IDSymbol name="MusicMenu" value="0x1001" />
+      <IDSymbol name="NextTrack" value="0x0104" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>
