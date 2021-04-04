@@ -32,5 +32,6 @@ namespace MusicToCodeBy
         public const int PickFolder = 0x0103;
         public const int MusicMenu = 0x1001;
         public const int NextTrack = 0x0104;
+        public const int PreviousTrack = 0x0105;
     }
 }
