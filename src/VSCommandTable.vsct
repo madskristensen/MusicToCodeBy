@@ -73,6 +73,16 @@
         </Strings>
       </Button>
 
+      <Button guid="CommandSet" id="PreviousTrack" priority="0x0100" type="Button">
+        <Parent guid="CommandSet" id="MusicMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="GoToPreviousInList" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Previous Track</ButtonText>
+          <LocCanonicalName>.MusicToCodeBy.PreviousTrack</LocCanonicalName>
+        </Strings>
+      </Button>
+      
       <Button guid="CommandSet" id="PickFolder" priority="0x0100" type="Button">
         <Parent guid="CommandSet" id="FolderPickerGroup" />
         <Icon guid="ImageCatalogGuid" id="FolderOpened" />
@@ -102,6 +112,7 @@
       <IDSymbol name="PickFolder" value="0x0103" />
       <IDSymbol name="MusicMenu" value="0x1001" />
       <IDSymbol name="NextTrack" value="0x0104" />
+      <IDSymbol name="PreviousTrack" value="0x0105" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>
