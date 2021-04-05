@@ -83,6 +83,11 @@ namespace MusicToCodeBy
             _player.controls.next();
         }
 
+        public void PreviousTrack()
+        {
+            _player.controls.previous();
+        }
+
         private void OnOptionsSaved(object sender, General e)
         {
             _player.settings.volume = e.Volume;

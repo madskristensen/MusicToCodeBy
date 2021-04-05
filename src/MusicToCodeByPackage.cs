@@ -25,6 +25,7 @@ namespace MusicToCodeBy
             await VolumeDown.InitializeAsync(this, player);
             await PickFolder.InitializeAsync(this, player);
             await NextTrack.InitializeAsync(this, player);
+            await PreviousTrack.InitializeAsync(this, player);
         }
     }
 }
