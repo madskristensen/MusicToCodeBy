@@ -1,4 +1,4 @@
-﻿# Music To Code By
+# Music To Code By
 
 [![Build status](https://ci.appveyor.com/api/projects/status/8dp6elaqrvw8iwc9?svg=true)](https://ci.appveyor.com/project/madskristensen/musictocodeby)
 
@@ -11,6 +11,8 @@ Plays your favorite music to code by to get you in the zone!!
 ![Screenshot](art/screenshot.png)
 
 Get your royalty free music here: https://www.bensound.com/royalty-free-music
+
+Inspired by [Music to Code By](https://pwop.e-junkie.com/product/MTCB-MP3/Music-to-Code-By-MP3-Collection) from the original thought of the creator [Carl Franklin](https://twitter.com/carlfranklin).
 
 ## License
 [Apache 2.0](LICENSE)
